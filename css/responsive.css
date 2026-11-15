@@ -16,10 +16,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .batches-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .training-features {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -79,17 +75,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Batches */
-  .batch-card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .batch-details {
-    flex-direction: row;
-    gap: var(--space-6);
-  }
-
   /* Footer */
   .footer-grid {
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -114,10 +99,6 @@
 
   .careers-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .batches-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .stats-row {
