@@ -1,8 +1,9 @@
 // hover-footer.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('.hover-footer');
   const footerSvg = document.querySelector('.hover-footer-svg');
-  if (!footerSvg) return;
+  if (!footer || !footerSvg) return;
 
   const revealMask = footerSvg.querySelector('#revealMask');
   const textGradient = footerSvg.querySelector('#textGradient');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealMask.setAttribute('cx', '50%');
   revealMask.setAttribute('cy', '50%');
 
-  footerSvg.addEventListener('mouseenter', () => {
+  footer.addEventListener('mouseenter', () => {
     footerSvg.classList.add('is-hovered');
     // Inject the multi-colored stops
     textGradient.innerHTML = `
@@ -23,13 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   });
 
-  footerSvg.addEventListener('mouseleave', () => {
+  footer.addEventListener('mouseleave', () => {
     footerSvg.classList.remove('is-hovered');
     textGradient.innerHTML = '';
   });
 
-  footerSvg.addEventListener('mousemove', (e) => {
+  footer.addEventListener('mousemove', (e) => {
     const rect = footerSvg.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
     const cxPercentage = ((e.clientX - rect.left) / rect.width) * 100;
     const cyPercentage = ((e.clientY - rect.top) / rect.height) * 100;
     

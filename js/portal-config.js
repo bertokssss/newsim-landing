@@ -10,9 +10,9 @@
  */
 window.NEWSIM_PORTALS = Object.assign(
   {
-    trainee: '',
-    instructor: '',
-    management: '',
+    trainee: 'https://newsim-trainee.vercel.app',
+    instructor: 'https://newsim-instructor.vercel.app',
+    management: 'https://newsim-management.vercel.app',
   },
   window.NEWSIM_PORTALS || {}
 );

@@ -34,6 +34,12 @@
     return proto + '//' + portal + '.' + rootDomain;
   }
 
+  var PRODUCTION_DEFAULTS = {
+    management: 'https://newsim-management.vercel.app',
+    instructor: 'https://newsim-instructor.vercel.app',
+    trainee: 'https://newsim-trainee.vercel.app',
+  };
+
   function resolvePortalBase(portal) {
     var globalConfig = window.NEWSIM_PORTALS || {};
     if (globalConfig[portal]) {
@@ -42,6 +48,9 @@
     var metaVal = getMetaContent('newsim-' + portal + '-url');
     if (metaVal) {
       return metaVal.replace(/\/+$/, '');
+    }
+    if (PRODUCTION_DEFAULTS[portal]) {
+      return PRODUCTION_DEFAULTS[portal];
     }
     if (isLocalHost(window.location.hostname)) {
       var defaults = {

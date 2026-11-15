@@ -1045,7 +1045,7 @@
 
 .hover-footer-content {
   position: relative;
-  z-index: 40;
+  z-index: 50;
   padding: var(--space-12) var(--space-8);
 }
 
@@ -1187,8 +1187,8 @@
   margin-top: -13rem;
   margin-bottom: -9rem;
   position: relative;
-  z-index: 50;
-  pointer-events: none; /* Let pointer events pass to SVG */
+  z-index: 10;
+  pointer-events: none;
 }
 
 @media (min-width: 1024px) {
@@ -1200,9 +1200,8 @@
 .hover-footer-svg {
   width: 100%;
   height: 100%;
-  cursor: pointer;
   user-select: none;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 /* Base text */
