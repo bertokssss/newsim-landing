@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEWSIM — Smart Learning Management System for Maritime Training. Digital enrollment, STCW-compliant programs, automated payment, and professional maritime education.">
+  <meta name="keywords" content="maritime training, STCW, seafarer, enrollment, NEWSIM, maritime education, ship simulation">
+  <meta property="og:title" content="NEWSIM — Smart Maritime Training Platform">
+  <meta property="og:description" content="Intelligent maritime education through digital learning, automated enrollment, secure payment, and internationally aligned training.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07111C">
+  <!-- Optional deployment overrides (leave empty for local defaults or populate in Vercel/build) -->
+  <meta name="newsim-management-url" content="">
+  <meta name="newsim-instructor-url" content="">
+  <meta name="newsim-trainee-url" content="">
+  <meta name="newsim-ga-id" content="">
+  <title>NEWSIM — Smart Learning Management System for Maritime Training</title>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================
+       TOP HEADER (BRAND & ACTIONS)
+       ======================================== -->
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <a href="#hero" class="nav-brand" data-magnetic>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-brand-icon">
+          <path d="M12 2L2 22h20L12 2z" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M12 10l-4 8h8l-4-8z" fill="var(--accent)"/>
+        </svg>
+        <span>NEW<span style="color: var(--accent); font-weight: 400;">SIM</span></span>
+      </a>
+      <div class="header-actions">
+        <a href="/login" data-portal="trainee" data-portal-path="/login" class="btn btn--outline" data-magnetic>Log In</a>
+        <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="header_primary" class="btn btn--primary" data-magnetic>Start Training</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================
+       1. FLOATING NAVIGATION BAR (PILL)
+       ======================================== -->
+  <header class="animated-nav-pill" id="animated-nav-pill">
+    <div class="animated-nav-inner">
+      <nav class="nav-menu-pill">
+        <a href="#hero" class="nav-link-pill active">Home</a>
+        <a href="#programs" class="nav-link-pill">Programs</a>
+        <a href="#enrollment" class="nav-link-pill">Requirements</a>
+        <a href="#batches" class="nav-link-pill">Batches</a>
+        <a href="#about" class="nav-link-pill">About</a>
+        <a href="#contact" class="nav-link-pill">Contact</a>
+      </nav>
+
+      <!-- Hamburger for Mobile Menu when pill is expanded -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="nav-collapsed-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#programs" class="mobile-nav-link">Programs</a>
+      <a href="#enrollment" class="mobile-nav-link">Requirements</a>
+      <a href="#batches" class="mobile-nav-link">Batches</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <div class="mobile-nav-actions">
+        <a href="/login" data-portal="trainee" data-portal-path="/login" class="btn btn--outline" style="width: 100%; justify-content: center; margin-bottom: 0.75rem;">Log In</a>
+        <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="mobile_menu_cta" class="btn-motion btn-motion--primary">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Start Your Maritime Training Journey</span>
+  </a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ========================================
+         2. HERO SECTION
+         ======================================== -->
+    <section id="hero" class="hero">
+      <div class="hero-bg">
+        <picture>
+          <source srcset="images/hero-bg.webp" type="image/webp">
+          <img src="images/hero-bg.jpg" alt="Luxury vessel navigating open ocean waters" class="parallax-bg" data-speed="0.2" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero-overlay"></div>
+        <canvas id="ocean-canvas" class="hero-canvas"></canvas>
+        <canvas id="particles-canvas" class="hero-particles"></canvas>
+      </div>
+
+            <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title reveal">
+            YOUR JOURNEY<br>LEADS 
+            <span class="rotating-text-wrapper" aria-label="BEYOND, AHEAD, ABROAD, FORWARD">
+              <span class="rotating-word" style="visibility: hidden;">FORWARD</span> <!-- Ghost word for width -->
+              <span class="rotating-word active">BEYOND</span>
+              <span class="rotating-word">AHEAD</span>
+              <span class="rotating-word">ABROAD</span>
+              <span class="rotating-word">FORWARD</span>
+            </span>
+          </h1>
+          <p class="hero-subtitle reveal stagger-1">Smart Learning Management System for Maritime Training delivering intelligent maritime education through digital learning, automated enrollment, secure payment, and internationally aligned training.</p>
+
+          <div class="hero-actions reveal stagger-2">
+            <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="hero_primary" class="btn-motion btn-motion--primary">
+              <span class="circle"></span>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+              <span class="button-text">Start Your Maritime Training Journey</span>
+            </a>
+            <a href="#programs" class="btn-motion btn-motion--outline">
+              <span class="circle"></span>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+              <span class="button-text">Explore Programs</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none">
+          <path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,72 L1440,120 L0,120 Z" fill="#ffffff"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ========================================
+         3. ABOUT NEWSIM
+         ======================================== -->
+    <section id="about" class="section section--white">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-images reveal">
+            <picture>
+              <source srcset="images/about-main.webp" type="image/webp">
+              <img src="images/about-main.jpg" alt="Modern maritime vessel at sunset" class="img-main" loading="lazy" decoding="async">
+            </picture>
+            <picture>
+              <source srcset="images/about-secondary.webp" type="image/webp">
+              <img src="images/about-secondary.jpg" alt="Cargo vessel navigating open waters" class="img-secondary" loading="lazy" decoding="async">
+            </picture>
+            <div class="stat-badge stat-badge--1 float">
+              <h4><span data-stat="students_trained" data-count="10000" data-suffix="+">0</span></h4>
+              <span>Students Trained</span>
+            </div>
+            <div class="stat-badge stat-badge--2 float" style="animation-delay: 1s;">
+              <h4><span data-stat="training_programs" data-count="50" data-suffix="+">0</span></h4>
+              <span>Training Programs</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <div class="badge badge--light reveal">ABOUT US</div>
+            <h2 class="section-heading section-heading--dark reveal stagger-1">INTELLIGENT MARITIME<br>EDUCATION PLATFORM</h2>
+            <p class="section-text section-text--dark reveal stagger-2">We deliver world-class maritime training aligned with international STCW standards. Our digital-first approach transforms traditional enrollment, learning, and certification into a seamless, technology-driven experience for modern seafarers.</p>
+
+            <ul class="feature-list reveal stagger-3">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                International Maritime Standards
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Digital-First Transformation
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Industry-Focused Training
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Career-Ready Graduates
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         4. FEATURED MARITIME PROGRAMS
+         ======================================== -->
+    <section id="programs" class="section section--white" style="background: #f7f9fc;">
+      <div class="container">
+        <div class="programs-header">
+          <div>
+            <div class="badge badge--light reveal">PROGRAMS</div>
+            <h2 class="section-heading section-heading--dark reveal stagger-1">MARITIME TRAINING PROGRAMS</h2>
+          </div>
+          <a href="#batches" class="btn-motion reveal btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">View All</span>
+  </a>
+        </div>
+
+        <div class="programs-grid">
+          <div class="program-card reveal stagger-1">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="program-title">Basic Safety Training</h3>
+              <p class="program-desc">Foundation STCW course covering personal survival, fire prevention, first aid, and personal safety responsibilities.</p>
+              <div class="program-meta">
+                <span class="program-duration">5 Days</span>
+                <span class="program-price">₱8,500</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+
+          <div class="program-card reveal stagger-2">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+              </div>
+              <h3 class="program-title">Advanced Fire Fighting</h3>
+              <p class="program-desc">Advanced techniques in fire suppression, firefighting organization, strategy, and command in maritime emergencies.</p>
+              <div class="program-meta">
+                <span class="program-duration">3 Days</span>
+                <span class="program-price">₱6,500</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+
+          <div class="program-card reveal stagger-3">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h6l3-9 3 18 3-9h5"/></svg>
+              </div>
+              <h3 class="program-title">Fast Rescue Boat</h3>
+              <p class="program-desc">Competency training for launching, operating, and recovering fast rescue boats during maritime emergency operations.</p>
+              <div class="program-meta">
+                <span class="program-duration">3 Days</span>
+                <span class="program-price">₱7,000</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+
+          <div class="program-card reveal stagger-1">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3 class="program-title">SCRB</h3>
+              <p class="program-desc">Proficiency in Survival Craft and Rescue Boats — essential competency for lifeboat and rescue operations at sea.</p>
+              <div class="program-meta">
+                <span class="program-duration">4 Days</span>
+                <span class="program-price">₱7,500</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+
+          <div class="program-card reveal stagger-2">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              </div>
+              <h3 class="program-title">ECDIS</h3>
+              <p class="program-desc">Electronic Chart Display and Information Systems — digital navigation training for modern bridge operations.</p>
+              <div class="program-meta">
+                <span class="program-duration">5 Days</span>
+                <span class="program-price">₱12,000</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+
+          <div class="program-card reveal stagger-3">
+            <div class="program-card-inner">
+              <div class="program-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <h3 class="program-title">Bridge Resource Management</h3>
+              <p class="program-desc">Team leadership, communication, and decision-making skills for effective bridge operations and crew coordination.</p>
+              <div class="program-meta">
+                <span class="program-duration">3 Days</span>
+                <span class="program-price">₱9,000</span>
+              </div>
+              <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="program_card_apply" class="btn-motion btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Apply</span>
+  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         5. WHY CHOOSE NEWSIM
+         ======================================== -->
+    <section class="section section--navy">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="badge badge--navy reveal">WHY NEWSIM</div>
+          <h2 class="section-heading reveal stagger-1">THE FUTURE OF<br>MARITIME COMPLIANCE</h2>
+        </div>
+
+        <div class="platform-grid">
+          <div class="platform-card reveal stagger-1">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>STCW Compliant</h3>
+            <p>Curriculum fully aligned with international STCW standards and MARINA requirements for global recognition.</p>
+          </div>
+          <div class="platform-card reveal stagger-2">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Certified Instructors</h3>
+            <p>Learn from experienced, industry-certified maritime professionals with real-world operational expertise.</p>
+          </div>
+          <div class="platform-card reveal stagger-3">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <h3>Modern Platform</h3>
+            <p>State-of-the-art learning management system with digital classrooms, progress tracking, and real-time analytics.</p>
+          </div>
+          <div class="platform-card reveal stagger-4">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3>Smart Enrollment</h3>
+            <p>100% digital onboarding with automated document verification, requirement validation, and instant confirmation.</p>
+          </div>
+          <div class="platform-card reveal stagger-5">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3>Digital Certificates</h3>
+            <p>Automated generation of tamper-proof, QR-verifiable electronic certificates upon course completion.</p>
+          </div>
+          <div class="platform-card reveal stagger-6">
+            <div class="platform-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <h3>Industry Partnerships</h3>
+            <p>Strategic partnerships with shipping companies and maritime organizations for enhanced career placement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         6. TRAINING EXPERIENCE
+         ======================================== -->
+    <section class="section training-section">
+      <div class="training-bg">
+        <picture>
+          <source srcset="images/training-bg.webp" type="image/webp">
+          <img src="images/training-bg.jpg" alt="Bridge simulator training facility" class="parallax-bg" data-speed="0.15" loading="lazy" decoding="async">
+        </picture>
+        <div class="training-overlay"></div>
+      </div>
+      <div class="container training-content">
+        <div class="badge badge--navy reveal">IMMERSIVE TRAINING</div>
+        <h2 class="section-heading reveal stagger-1">HANDS-ON MARITIME<br>EXCELLENCE</h2>
+        <p class="section-text reveal stagger-2" style="max-width: 600px;">Experience industry-leading training facilities equipped with modern simulation technology and practical exercise environments.</p>
+
+        <div class="training-features reveal stagger-3">
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <span>Bridge Simulators</span>
+          </div>
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            <span>Engine Room Training</span>
+          </div>
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>Emergency Response</span>
+          </div>
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
+            <span>Fire Fighting</span>
+          </div>
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Safety Drills</span>
+          </div>
+          <div class="training-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h6l3-9 3 18 3-9h5"/></svg>
+            <span>Practical Exercises</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         7. ENROLLMENT PROCESS
+         ======================================== -->
+    <section id="enrollment" class="section section--white">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="badge badge--light reveal">THE JOURNEY</div>
+          <h2 class="section-heading section-heading--dark reveal stagger-1">ENROLLMENT PROCESS</h2>
+          <p class="section-text section-text--dark reveal stagger-2" style="max-width: 600px; margin: 0 auto;">Experience a seamless, fully digital enrollment workflow from registration to dashboard activation.</p>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress"></div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="1">
+            <div class="timeline-marker">
+              <span>01</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Create Account</h3>
+              <p>Register with your personal details and create secure login credentials through our digital portal.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="2">
+            <div class="timeline-marker">
+              <span>02</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Choose Program</h3>
+              <p>Browse available maritime training programs and select the course that matches your career goals.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="3">
+            <div class="timeline-marker">
+              <span>03</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Upload Requirements</h3>
+              <p>Submit required documents including valid ID, medical certificate, and MARINA prerequisites digitally.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="4">
+            <div class="timeline-marker">
+              <span>04</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Generate Payment QR</h3>
+              <p>Receive a unique QR code linked to your enrollment for secure, trackable payment processing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="5">
+            <div class="timeline-marker">
+              <span>05</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Pay via GCash</h3>
+              <p>Complete payment through GCash or any supported payment gateway by scanning your enrollment QR code.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="6">
+            <div class="timeline-marker">
+              <span>06</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Payment Verified</h3>
+              <p>Your payment is automatically verified and confirmed. Receipt images are securely processed and cleared.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="7">
+            <div class="timeline-marker">
+              <span>07</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Application Approved</h3>
+              <p>Your enrollment is reviewed and approved by administration. You receive confirmation via email and SMS.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" data-step="8">
+            <div class="timeline-marker">
+              <span>08</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Dashboard Activated</h3>
+              <p>Access your personalized student dashboard with course materials, schedules, and progress tracking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         8. UPCOMING BATCHES
+         ======================================== -->
+    <section id="batches" class="section" style="background: #f7f9fc;">
+      <div class="container">
+        <div class="programs-header">
+          <div>
+            <div class="badge badge--light reveal">SCHEDULES</div>
+            <h2 class="section-heading section-heading--dark reveal stagger-1">UPCOMING BATCHES</h2>
+          </div>
+          <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="batches_view_all" class="btn-motion reveal btn-motion--dark">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">View All Schedules</span>
+  </a>
+        </div>
+
+        <div class="batches-grid">
+          <div class="batch-card reveal stagger-1">
+            <div class="batch-status batch-status--open">Open</div>
+            <h3 class="batch-title">Basic Safety Training</h3>
+            <div class="batch-details">
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Sept 15 &ndash; Sept 19, 2026</span>
+              </div>
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                <span>12 / 25 slots available</span>
+              </div>
+            </div>
+            <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="batch_enroll" class="btn btn--dark" data-magnetic>Enroll Now</a>
+          </div>
+
+          <div class="batch-card reveal stagger-2">
+            <div class="batch-status batch-status--open">Open</div>
+            <h3 class="batch-title">Advanced Fire Fighting</h3>
+            <div class="batch-details">
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Sept 22 &ndash; Sept 24, 2026</span>
+              </div>
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                <span>8 / 20 slots available</span>
+              </div>
+            </div>
+            <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="batch_enroll" class="btn btn--dark" data-magnetic>Enroll Now</a>
+          </div>
+
+          <div class="batch-card reveal stagger-3">
+            <div class="batch-status batch-status--limited">Limited</div>
+            <h3 class="batch-title">ECDIS Training</h3>
+            <div class="batch-details">
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Oct 6 &ndash; Oct 10, 2026</span>
+              </div>
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                <span>3 / 15 slots available</span>
+              </div>
+            </div>
+            <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="batch_enroll" class="btn btn--dark" data-magnetic>Enroll Now</a>
+          </div>
+
+          <div class="batch-card reveal stagger-4">
+            <div class="batch-status batch-status--open">Open</div>
+            <h3 class="batch-title">Bridge Resource Management</h3>
+            <div class="batch-details">
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Oct 13 &ndash; Oct 15, 2026</span>
+              </div>
+              <div class="batch-detail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                <span>18 / 25 slots available</span>
+              </div>
+            </div>
+            <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="batch_enroll" class="btn btn--dark" data-magnetic>Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         9. CAREER OPPORTUNITIES
+         ======================================== -->
+    <section class="section section--navy">
+      <div class="container">
+        <div class="programs-header" style="margin-bottom: 3rem;">
+          <div>
+            <div class="badge badge--navy reveal">CAREERS</div>
+            <h2 class="section-heading reveal stagger-1">CAREER PATHWAYS</h2>
+          </div>
+          <a href="#programs" class="btn-motion reveal btn-motion--outline">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Explore Programs</span>
+  </a>
+        </div>
+
+        <div class="careers-grid">
+          <a href="#programs" class="career-card reveal stagger-1">
+            <picture>
+              <source srcset="images/career-cruise.webp" type="image/webp">
+              <img src="images/career-cruise.jpg" alt="Cruise ship career opportunity" loading="lazy" decoding="async">
+            </picture>
+            <div class="career-overlay">
+              <div class="career-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+              <span class="career-category">International</span>
+              <h3 class="career-title">Cruise<br>Ships</h3>
+            </div>
+          </a>
+
+          <a href="#programs" class="career-card reveal stagger-2">
+            <picture>
+              <source srcset="images/career-cargo.webp" type="image/webp">
+              <img src="images/career-cargo.jpg" alt="Cargo ship career opportunity" loading="lazy" decoding="async">
+            </picture>
+            <div class="career-overlay">
+              <div class="career-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+              <span class="career-category">Global Trade</span>
+              <h3 class="career-title">Cargo<br>Ships</h3>
+            </div>
+          </a>
+
+          <a href="#programs" class="career-card reveal stagger-3">
+            <picture>
+              <source srcset="images/career-offshore.webp" type="image/webp">
+              <img src="images/career-offshore.jpg" alt="Offshore operations career" loading="lazy" decoding="async">
+            </picture>
+            <div class="career-overlay">
+              <div class="career-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+              <span class="career-category">Energy Sector</span>
+              <h3 class="career-title">Offshore<br>Operations</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         10. STATISTICS
+         ======================================== -->
+    <section class="section section--surface">
+      <div class="container">
+        <div class="stats-row reveal">
+          <div class="stat-item">
+            <h3 class="stat-number"><span data-stat="students_trained" data-count="10000" data-suffix="+">0</span></h3>
+            <p class="stat-label">Students Trained</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <h3 class="stat-number"><span data-stat="training_programs" data-count="50" data-suffix="+">0</span></h3>
+            <p class="stat-label">Training Programs</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <h3 class="stat-number"><span data-stat="training_batches" data-count="100" data-suffix="+">0</span></h3>
+            <p class="stat-label">Training Batches</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <h3 class="stat-number"><span data-stat="completion_rate" data-count="95" data-suffix="%">0</span></h3>
+            <p class="stat-label">Completion Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         11. TESTIMONIALS
+         ======================================== -->
+    <section class="section section--white">
+      <div class="container container--narrow">
+        <div class="testimonials-section">
+          <div class="carousel" id="testimonial-carousel">
+            <div class="carousel-track" id="carousel-track">
+              <div class="carousel-slide">
+                <blockquote class="testimonial-quote reveal">
+                  "The automated enrollment and clear learning paths saved me so much time. NEWSIM represents the future of maritime training — professional, efficient, and truly digital."
+                </blockquote>
+                <div class="testimonial-author reveal stagger-1">
+                  <h4>Capt. James Carter</h4>
+                  <span>Master Mariner</span>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <blockquote class="testimonial-quote">
+                  "The QR payment integration and instant receipt verification made registering for my STCW courses effortless. A completely seamless experience from start to finish."
+                </blockquote>
+                <div class="testimonial-author">
+                  <h4>Elena Rostova</h4>
+                  <span>Deck Officer</span>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <blockquote class="testimonial-quote">
+                  "As a training center administrator, NEWSIM has reduced our manual workload by 80%. The automated compliance tracking and certificate generation are game-changers."
+                </blockquote>
+                <div class="testimonial-author">
+                  <h4>Chief Eng. Marcus Wong</h4>
+                  <span>Training Director</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-nav">
+              <button class="carousel-prev" aria-label="Previous testimonial">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="carousel-dots" id="carousel-dots"></div>
+              <button class="carousel-next" aria-label="Next testimonial">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         12. FINAL CALL TO ACTION
+         ======================================== -->
+    <section class="section cta-section">
+      <div class="container reveal">
+        <h2 class="cta-heading">BEGIN YOUR MARITIME<br>CAREER TODAY</h2>
+        <p class="cta-text">Join thousands of successful maritime professionals who trust NEWSIM for world-class training and certification.</p>
+        <a href="/register" data-portal="trainee" data-portal-path="/register" data-cta="bottom_cta" class="btn-motion btn-motion--primary">
+    <span class="circle"></span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    <span class="button-text">Start Your Maritime Training Journey</span>
+  </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       HOVER FOOTER
+       ======================================== -->
+  <footer class="hover-footer" id="contact">
+    <div class="hover-footer-bg"></div>
+
+    <div class="hover-footer-content container">
+      <div class="hover-footer-grid">
+        <!-- Brand section -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="hover-footer-brand-title">
+            <span class="logo-text">NEWSIM</span>
+          </div>
+          <p class="hover-footer-desc">
+            Smart Learning Management System for Maritime Training — delivering intelligent maritime education through digital learning, automated enrollment, secure payment, and internationally aligned training.
+          </p>
+        </div>
+
+        <!-- Portals & Navigation -->
+        <div class="hover-footer-col">
+          <h4>Portals &amp; Programs</h4>
+          <ul class="hover-footer-list">
+            <li><a href="/login" data-portal="trainee" data-portal-path="/login" class="hover-footer-link">Trainee Portal</a></li>
+            <li><a href="/login" data-portal="instructor" data-portal-path="/login" class="hover-footer-link">Instructor Portal</a></li>
+            <li><a href="/login" data-portal="management" data-portal-path="/login" class="hover-footer-link">Management Portal</a></li>
+            <li><a href="#programs" class="hover-footer-link">Training Programs</a></li>
+            <li><a href="#enrollment" class="hover-footer-link">Requirements &amp; FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Privacy -->
+        <div class="hover-footer-col">
+          <h4>Legal &amp; Privacy</h4>
+          <ul class="hover-footer-list">
+            <li><a href="privacy.html" class="hover-footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover-footer-link">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html#cookies" class="hover-footer-link">Cookie Policy</a></li>
+            <li>
+              <button type="button" data-open-cookie-settings class="hover-footer-link" style="background: none; border: none; padding: 0; font: inherit; cursor: pointer; text-align: left;">
+                Cookie Settings
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact section -->
+        <div class="hover-footer-col">
+          <h4>Contact Us</h4>
+          <ul class="hover-footer-list">
+            <li>
+              <a href="mailto:newsim.superadmin@gmail.com" class="hover-footer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hover-footer-link-icon"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                newsim.superadmin@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+639398005951" class="hover-footer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hover-footer-link-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +63 9398005951
+              </a>
+            </li>
+            <li>
+              <span class="hover-footer-link" style="color: var(--text-secondary); cursor: default;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hover-footer-link-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Talisay City, Cebu, Philippines
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="hover-footer-divider" />
+
+      <!-- Footer bottom -->
+      <div class="hover-footer-bottom">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <a href="privacy.html" class="hover-footer-link" style="font-size: 0.875rem;">Privacy Policy</a>
+          <a href="terms.html" class="hover-footer-link" style="font-size: 0.875rem;">Terms &amp; Conditions</a>
+          <button type="button" data-open-cookie-settings class="hover-footer-link" style="background: none; border: none; padding: 0; font: inherit; font-size: 0.875rem; cursor: pointer;">Cookie Settings</button>
+        </div>
+        <p>&copy; 2026 NEWSIM Maritime Training Management System. All rights reserved.</p>
+      </div>
+    </div>
+
+    <!-- Text hover effect -->
+    <div class="hover-footer-text-effect container">
+      <svg
+        class="hover-footer-svg"
+        width="100%"
+        height="100%"
+        viewBox="0 0 300 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="textGradient"
+            gradientUnits="userSpaceOnUse"
+            cx="50%"
+            cy="50%"
+            r="25%"
+          >
+            <!-- JS dynamically injects stops here on hover -->
+          </linearGradient>
+
+          <!-- We use radialGradient but move its cx/cy manually in JS -->
+          <radialGradient
+            id="revealMask"
+            gradientUnits="userSpaceOnUse"
+            r="20%"
+            cx="50%"
+            cy="50%"
+          >
+            <stop offset="0%" stop-color="white" />
+            <stop offset="100%" stop-color="black" />
+          </radialGradient>
+          <mask id="textMask">
+            <rect
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              fill="url(#revealMask)"
+            />
+          </mask>
+        </defs>
+
+        <text
+          x="50%"
+          y="50%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          stroke-width="0.3"
+          class="hover-footer-text-base"
+        >
+          NEWSIM
+        </text>
+
+        <text
+          x="50%"
+          y="50%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          stroke-width="0.3"
+          class="hover-footer-text-stroke"
+        >
+          NEWSIM
+        </text>
+
+        <text
+          x="50%"
+          y="50%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          stroke="url(#textGradient)"
+          mask="url(#textMask)"
+          class="hover-footer-text-gradient"
+        >
+          NEWSIM
+        </text>
+      </svg>
+    </div>
+  </footer>
+
+  <!-- Scripts (deferred for faster FCP/LCP) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/mobile-menu.js" defer></script>
+  <script src="js/ocean-canvas.js" defer></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/counters.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/magnetic-btn.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/hover-footer.js" defer></script>
+  <script src="js/magnetic-cursor.js" defer></script>
+  <script src="js/portal-config.js" defer></script>
+  <script src="js/portal-links.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>
+

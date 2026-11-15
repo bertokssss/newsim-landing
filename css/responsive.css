@@ -1,0 +1,187 @@
+/* ---- Mobile Base Styles (<768px) ---- */
+.nav-menu-pill,
+.header-actions {
+  display: none;
+}
+.mobile-toggle {
+  display: flex;
+}
+.animated-nav-pill.collapsed .mobile-toggle {
+  display: none;
+}
+
+/* ---- Small Devices (≥480px) ---- */
+@media (min-width: 480px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .batches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .training-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-divider {
+    display: block;
+  }
+}
+
+
+/* ---- Tablets (≥768px) ---- */
+@media (min-width: 768px) {
+  /* Navigation */
+  .nav-menu-pill,
+  .header-actions {
+    display: flex;
+  }
+  .mobile-toggle {
+    display: none;
+  }
+
+
+  /* About */
+  .about-grid {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-12);
+  }
+  .about-images {
+    width: 52%;
+    flex-shrink: 0;
+    padding-bottom: var(--space-12);
+  }
+  .about-content {
+    width: 48%;
+  }
+
+  /* Programs */
+  .programs-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  /* Platform */
+  .platform-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Training */
+  .training-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Careers */
+  .careers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Batches */
+  .batch-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .batch-details {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+
+/* ---- Laptops/Desktops (≥1024px) ---- */
+@media (min-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .platform-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .careers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .batches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-row {
+    flex-wrap: nowrap;
+    gap: var(--space-12);
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+
+/* ---- Large Screens (≥1280px) ---- */
+@media (min-width: 1280px) {
+  .platform-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ---- Ultra-wide (≥1440px) ---- */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1400px;
+    --container-padding: 2rem;
+  }
+
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* ---- Responsive Polish, Picture Wrapper & Overflow Guards ---- */
+picture {
+  display: contents;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.hero-actions {
+  align-items: center;
+}
+
+@media (max-width: 479px) {
+  .hero-actions .btn-motion {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .top-header-inner {
+    gap: 0.5rem;
+  }
+
+  .programs-header {
+    gap: 1.25rem;
+  }
+}

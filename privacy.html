@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | NEWSIM Maritime Training</title>
+  <meta name="description" content="NEWSIM Maritime Training Management System Privacy Policy under Philippine Republic Act No. 10173 (Data Privacy Act of 2012).">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#07111c; --card:#0d1a2b; --gold:#d8c4a5; --sky:#38bdf8; --text:#e2e8f0; --muted:#94a3b8; --border:rgba(255,255,255,0.1); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; overflow-x:hidden; }
+    .wrap { max-width:900px; margin:0 auto; padding:32px 20px 72px; }
+    .topbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:24px; font-size:13px; }
+    .topbar a, .topbar button { color:var(--gold); text-decoration:none; font-weight:600; background:none; border:none; cursor:pointer; font:inherit; padding:0; }
+    .topbar-right { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+    .hero-card { background:linear-gradient(135deg,#0f1e31,#081320); border:1px solid var(--border); border-radius:18px; padding:28px; margin-bottom:22px; }
+    .badge { display:inline-block; font-size:11px; letter-spacing:1.4px; text-transform:uppercase; font-weight:700; color:var(--gold); border:1px solid rgba(216,196,165,0.35); background:rgba(216,196,165,0.1); padding:4px 12px; border-radius:999px; margin-bottom:12px; }
+    h1 { font-family:Sora,sans-serif; font-size:clamp(1.7rem,4vw,2.4rem); margin:0 0 10px; color:#fff; }
+    .meta { display:flex; flex-wrap:wrap; gap:18px; font-size:12px; color:var(--muted); margin-top:14px; }
+    .doc { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:28px; }
+    h2 { font-family:Sora,sans-serif; font-size:1.15rem; color:#fff; margin:24px 0 8px; }
+    h2:first-child { margin-top:0; }
+    hr { border:none; border-top:1px solid var(--border); margin:22px 0; }
+    ul { padding-left:20px; margin:8px 0; }
+    li { margin-bottom:8px; color:#cbd5e1; }
+    p { color:#cbd5e1; margin:8px 0; }
+    strong { color:#fff; }
+    .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:14px; }
+    .contact-box { display:block; padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:#fff; text-decoration:none; }
+    .contact-box small { display:block; color:var(--muted); font-size:11px; }
+    @media (max-width:600px) { .hero-card, .doc { padding:20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <a href="index.html">&larr; Back to NEWSIM Homepage</a>
+      <div class="topbar-right">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <button type="button" data-open-cookie-settings>Cookie Settings</button>
+      </div>
+    </div>
+
+    <header class="hero-card">
+      <span class="badge">Philippine Data Privacy Act (RA 10173)</span>
+      <h1>NEWSIM Privacy Policy</h1>
+      <p>This Privacy Policy explains how the NEWSIM Maritime Training Management System collects, processes, stores, and protects personal data for trainees, instructors, and administrators in alignment with Republic Act No. 10173.</p>
+      <div class="meta">
+        <span>Effective Date: <strong>November 12, 2026</strong></span>
+        <span>Policy Version: <strong>2026-11-v1</strong></span>
+      </div>
+    </header>
+
+    <article class="doc">
+      <h2>1. Personal Information Collected</h2>
+      <ul>
+        <li><strong>Account &amp; Identity Data:</strong> Full name, email address, mobile number, Seafarer Registration Number (SRN), portal role, and encrypted authentication credentials.</li>
+        <li><strong>Enrollment &amp; Attendance Records:</strong> Course applications, training batches, schedules, and attendance logs.</li>
+        <li><strong>Assessment &amp; Certification Records:</strong> Learning progress, exam/practical submissions, grading remarks, and verifiable certificate codes.</li>
+        <li><strong>Payment Records:</strong> Transaction amounts, payment methods, reference numbers, PayMongo checkout identifiers, and official receipts (raw card numbers/CVVs are never stored on NEWSIM servers).</li>
+      </ul>
+      <hr>
+      <h2>2. How Data Is Processed</h2>
+      <p>Trainee data supports eligibility checks, course delivery, grading, and certificate issuance. Instructor data supports course instruction, evaluations, and leave scheduling. Administrator and Super Administrator data supports operations, financial verification (strictly permission-gated), and security auditing.</p>
+      <hr>
+      <h2>3. Supabase Storage, Security &amp; Access Restrictions</h2>
+      <p>NEWSIM persists records in <strong>Supabase (PostgreSQL, Auth, and Storage)</strong> using TLS encryption in transit, Role-Based Access Control (RBAC), Row-Level Security policies, HTTP-only session cookies, TOTP Multi-Factor Authentication, account lockouts, rate limiting, and Google reCAPTCHA.</p>
+      <hr>
+      <h2 id="cookies">4. Cookies &amp; Consent Policy</h2>
+      <p>Essential cookies maintain authenticated portal sessions and security boundaries. Optional Google Analytics 4 measurements remain blocked until explicit consent is given, and NEWSIM strips passwords, SRNs, emails, payment details, and assessment answers from analytics events. You can manage preferences anytime via <a href="#cookies" data-open-cookie-settings style="color:var(--sky)">Cookie Settings</a>.</p>
+      <hr>
+      <h2>5. Your Rights Under RA 10173</h2>
+      <p>You have the right to be informed, access, rectify inaccurate records, object or request erasure where lawful, seek data portability, and file grievances with the Philippine National Privacy Commission (NPC).</p>
+      <hr>
+      <h2>6. Data Retention &amp; Account Deletion</h2>
+      <p>Records are retained only as long as required for active maritime training delivery, certificate verification, financial auditability, and legal accountability. To request export, correction, or account deletion, contact NEWSIM using your registered email and SRN.</p>
+      <hr>
+      <h2>7. Privacy Inquiries</h2>
+      <div class="contact-grid">
+        <a class="contact-box" href="mailto:newsim.superadmin@gmail.com">
+          <small>Official Support Email</small>
+          <strong>newsim.superadmin@gmail.com</strong>
+        </a>
+        <a class="contact-box" href="tel:+639398005951">
+          <small>Official Telephone</small>
+          <strong>+63 939 800 5951</strong>
+        </a>
+      </div>
+    </article>
+  </main>
+  <script src="js/portal-links.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

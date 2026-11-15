@@ -1,0 +1,288 @@
+/* ========================================
+   COMPONENTS.CSS — Base UI primitives
+   ======================================== */
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Primary — Gold accent, dark text with subtle modern glow */
+.btn--primary {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px 0 rgba(216, 196, 165, 0.3);
+}
+.btn--primary:hover {
+  background-color: #cbb48e;
+  border-color: #cbb48e;
+  color: var(--text-dark);
+  box-shadow: 0 6px 20px rgba(216, 196, 165, 0.4);
+}
+
+/* Outline — Sleek Glassmorphic */
+.btn--outline {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.btn--outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+}
+
+/* White */
+.btn--white {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-color: var(--white);
+}
+.btn--white:hover {
+  background-color: #f0f0f0;
+  color: var(--text-dark);
+}
+
+/* Navy */
+.btn--navy {
+  background-color: var(--bg);
+  color: var(--white);
+  border-color: var(--bg);
+}
+.btn--navy:hover {
+  background-color: #0c1f33;
+  color: var(--white);
+}
+
+/* Dark — for use on light backgrounds */
+.btn--dark {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+.btn--dark:hover {
+  background-color: var(--text-dark);
+  color: var(--white);
+}
+/* ---- Motion Buttons ---- */
+.btn-motion {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  padding: 4px 50px;
+  background-color: var(--surface);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.btn-motion .circle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  margin: 0;
+  display: block;
+  height: 42px;
+  width: 42px;
+  border-radius: 9999px;
+  background-color: var(--accent);
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+.btn-motion:hover .circle {
+  width: calc(100% - 8px);
+}
+
+.btn-motion .icon {
+  position: absolute;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  z-index: 2;
+  color: var(--text-dark);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-motion:hover .icon {
+  transform: translateX(6px);
+}
+
+.btn-motion .button-text {
+  position: relative;
+  z-index: 2;
+  margin-left: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  transition: color 0.5s ease;
+  color: var(--white);
+}
+
+.btn-motion:hover .button-text {
+  color: var(--text-dark);
+}
+
+/* Modifiers */
+.btn-motion--primary {
+  /* Default is already primarily dark surface with gold circle */
+}
+
+.btn-motion--dark {
+  background-color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+.btn-motion--dark .circle {
+  background-color: var(--surface);
+}
+.btn-motion--dark .icon {
+  color: var(--white);
+}
+.btn-motion--dark .button-text {
+  color: var(--text-dark);
+}
+.btn-motion--dark:hover .button-text {
+  color: var(--white);
+}
+
+.btn-motion--outline {
+  background-color: transparent;
+  border-color: rgba(255,255,255,0.2);
+}
+
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid currentColor;
+}
+.badge--navy {
+  color: var(--text-secondary);
+  border-color: var(--border);
+  background-color: var(--glass);
+}
+.badge--light {
+  color: var(--text-dark-secondary);
+  border-color: rgba(7, 17, 28, 0.15);
+  background-color: transparent;
+}
+
+/* ---- Sticky CTA ---- */
+.sticky-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+
+/* ---- Stat Badge (floating) ---- */
+.stat-badge {
+  position: absolute;
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(7, 17, 28, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-above);
+  min-width: 100px;
+}
+.stat-badge h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+  color: var(--primary);
+}
+.stat-badge span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dark-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* ---- Feature List ---- */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-8) 0;
+}
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.feature-list li svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+
+/* ---- No-scroll utility ---- */
+.body-no-scroll {
+  overflow: hidden;
+}
